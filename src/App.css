@@ -1,0 +1,31 @@
+.title{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .9rem !important;
+}
+
+.body{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem !important;
+}
+
+.btn-details{
+    font-size: .8rem !important;
+    background-color: gray !important;
+    border: none !important;
+}
+
+.close{
+    font-size: .7rem !important;
+}
+
+.post{
+    color: red;
+}
