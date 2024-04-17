@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BlogCard from "./components/BlogCard";
 import React, {useState} from 'react';
-import data from "../data";
+import data from "./data";
 
 
 

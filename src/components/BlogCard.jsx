@@ -5,34 +5,23 @@ import { useState } from "react";
 import data from "../data";
 import MyNavbar from "./MyNavbar";
 
-function BlogCard({setPostCount}) {
-  console.log(data);
-
+function BlogCard({ dataInfo, setDataInfo }) {
   const [show, setShow] = useState(false);
   const [blog, setBlog] = useState(null);
   const [page, setPage] = useState(1);
-  //const [dataInfo, setDataInfo] = useState(data);
-
-  setPostCount(dataInfo.length)
 
   const itemsPerPage = 10;
-
   const totalPages = Math.ceil(data.length / itemsPerPage);
-
+  const lastIndex = page * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+  const currentItems = dataInfo.slice(firstIndex, lastIndex);
   const handleShow = (blog) => {
     setBlog(blog);
     setShow(true);
   };
-
   const handlePage = (pageNumber) => {
     setPage(pageNumber);
   };
-
-
-
-  const lastIndex = page * itemsPerPage;
-  const firstIndex = lastIndex - itemsPerPage;
-  const currentItems = dataInfo.slice(firstIndex, lastIndex);
 
   const handleDelete = (id) => {
     const newData = dataInfo.filter((blog) => blog.id !== id);
@@ -41,7 +30,7 @@ function BlogCard({setPostCount}) {
 
   return (
     <>
-      <MyNavbar postCount={dataInfo.length}/>
+      
       <div className="row justify-content-center align-items-center">
         {currentItems.map((blog) => {
           const { id, title, body } = blog;
@@ -56,7 +45,11 @@ function BlogCard({setPostCount}) {
                 }}
               >
                 <Modal.Dialog>
-                  <Modal.Header closeButton className="close" onClick={()=>handleDelete(id)}>
+                  <Modal.Header
+                    closeButton
+                    className="close"
+                    onClick={() => handleDelete(id)}
+                  >
                     <Modal.Title className="title">{title}</Modal.Title>
                   </Modal.Header>
 
@@ -65,7 +58,11 @@ function BlogCard({setPostCount}) {
                   </Modal.Body>
 
                   <Modal.Footer className="mx-auto">
-                    <Button className="btn-details" variant="primary" onClick={() => handleShow(blog)}>
+                    <Button
+                      className="btn-details"
+                      variant="primary"
+                      onClick={() => handleShow(blog)}
+                    >
                       See Details
                     </Button>
                   </Modal.Footer>
@@ -87,7 +84,7 @@ function BlogCard({setPostCount}) {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  handlePage(number + 1)
+                  handlePage(number + 1);
                 }}
               >
                 {number + 1}
