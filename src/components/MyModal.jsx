@@ -18,7 +18,6 @@ function MyModal({ show, setShow, blog }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-
         </Modal.Footer>
       </Modal>
     </>

@@ -22,7 +22,6 @@ function BlogCard({ dataInfo, setDataInfo }) {
   const handlePage = (pageNumber) => {
     setPage(pageNumber);
   };
-
   const handleDelete = (id) => {
     const newData = dataInfo.filter((blog) => blog.id !== id);
     setDataInfo(newData);
@@ -30,7 +29,6 @@ function BlogCard({ dataInfo, setDataInfo }) {
 
   return (
     <>
-      
       <div className="row justify-content-center align-items-center">
         {currentItems.map((blog) => {
           const { id, title, body } = blog;
