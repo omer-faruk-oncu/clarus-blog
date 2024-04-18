@@ -3,23 +3,20 @@ import Main from "./pages/Main";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import BlogCard from "./components/BlogCard";
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import data from "./data";
 
-
-
 function App() {
-
-  
   const [dataInfo, setDataInfo] = useState(data);
 
   return (
     <BrowserRouter>
-      <MyNavbar postCount={dataInfo.length}/>
+      <MyNavbar postCount={dataInfo.length} />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/blog" element={<BlogCard dataInfo={dataInfo} setDataInfo={setDataInfo} />} />
+        <Route
+          path="/"
+          element={<Main dataInfo={dataInfo} setDataInfo={setDataInfo} />}
+        />
       </Routes>
     </BrowserRouter>
   );
