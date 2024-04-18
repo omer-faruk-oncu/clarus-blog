@@ -11,6 +11,7 @@ import data from "./data";
 
 function App() {
 
+  
   const [dataInfo, setDataInfo] = useState(data);
 
   return (
