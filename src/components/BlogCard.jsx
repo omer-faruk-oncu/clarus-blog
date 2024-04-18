@@ -11,7 +11,7 @@ function BlogCard({ dataInfo, setDataInfo }) {
   const [page, setPage] = useState(1);
 
   const itemsPerPage = 10;
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages = Math.ceil(dataInfo.length / itemsPerPage);
   const lastIndex = page * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
   const currentItems = dataInfo.slice(firstIndex, lastIndex);
