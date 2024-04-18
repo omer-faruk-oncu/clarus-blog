@@ -11,7 +11,6 @@ import data from "./data";
 
 function App() {
 
-  //const [postCount, setPostCount] = useState(0)
   const [dataInfo, setDataInfo] = useState(data);
 
   return (
